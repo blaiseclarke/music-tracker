@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+psycopg2-binary
+Flask-Login
+passlib
+python-dotenv
+requests
+gunicorn
+pytest
