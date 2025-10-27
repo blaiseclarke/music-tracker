@@ -12,7 +12,7 @@ This project is a port and modernization of an older application I built using R
 * Search for albums by artist and title using the MusicBrainz API.
 * Fetch cover art from the Cover Art Archive API.
 * Save albums to a personal, paginated list.
-* Add, Edit, and Delete albums from your list.
+* Add, Edit, and Delete albums from your list. (editing and deleting functionality still in development)
 
 ---
 
@@ -24,7 +24,7 @@ This project is a port and modernization of an older application I built using R
 * **ORM:** SQLAlchemy (via Flask-SQLAlchemy)
 * **Authentication:** Flask-Login
 * **API Client:** `requests`
-* **Testing:** `pytest`
+* **Testing:** `pytest` (still in development)
 * **Frontend:** Jinja2 templates with Bootstrap 5
 * **Deployment:** Gunicorn & Render
 
