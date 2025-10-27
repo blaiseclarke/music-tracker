@@ -1,0 +1,33 @@
+<h4>Search for an album to add:</h4>
+
+<form action="/search" method="get">
+  <label for="artist">Enter the artist:</label>
+  <br>
+  <input type="text" id="artist" name="artist" placeholder="Artist" value="<%= @artist %>"/>
+
+  <br><br>
+
+  <label for="album">Enter the album:</label>
+  <br>
+  <input type="text" id="album" name="album" placeholder="Album" value="<%= @album %>" />
+  <br>
+  <input type="submit" value="Search">
+</form>
+
+<% content_for :header_links do %>
+  <% if session[:username] %>
+    <form method='post' action='/users/signout'>
+      <p class='user-status'>
+        Signed in as <%= session[:username] %>.
+        <button type='submit'>Sign Out</button>
+      </p>
+    </form>
+  <% else %>
+    <a class='login' href='/users/signup'>Sign Up</a>
+    <a class='login' href='/users/signin'>Sign In</a>
+  <% end %>
+  <% if session[:username] %>
+    <a class="list" href="/artists">Artists</a>
+    <a class="list" href="/all_albums">All Albums</a>
+  <% end %>
+<% end %>

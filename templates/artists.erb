@@ -1,0 +1,50 @@
+<style>
+  h2, form {
+    display: inline-block;
+  }
+</style>
+
+<% @artists.each do |artist| %>
+  <p>
+    <% encoded = URI.encode_www_form_component(artist) %>
+
+    <h2><%= artist %></h2>
+
+    <br>
+    <form action="/albums/<%= encoded %>" method="get">
+      <button type="submit">View all <%= artist %> Albums </button>
+    </form>
+
+    <form action="/albums/<%= encoded %>/delete" method="post">
+      <button type="submit">Delete all <%= artist %> Albums </button>
+    </form>
+
+    <form action="/change/<%= encoded %>" method="get">
+      <button type="submit">Change Name </button>
+    </form>
+    <hr>
+  </p>
+<% end %>
+
+<% if params[:page_number] != '1' %>
+  <a href="/artists/<%= params[:page_number].to_i - 1 %>">Previous Page</a>
+<% end %>
+<% if params[:page_number] != @last_page.to_s %>
+  <a href="/artists/<%= params[:page_number].to_i + 1 %>">Next Page</a>
+<% end %>
+
+<% content_for :header_links do %>
+  <% if session[:username] %>
+    <form method='post' action='/users/signout'>
+      <p class='user-status'>
+        Signed in as <%= session[:username] %>.
+        <button type='submit'>Sign Out</button>
+      </p>
+    </form>
+  <% else %>
+    <a class='login' href='/users/signup'>Sign Up</a>
+    <a class='login' href='/users/signin'>Sign In</a>
+  <% end %>
+  <a class="list" href="/artists">Artists</a>
+  <a class="list" href="/all_albums">All Albums</a>
+<% end %>

@@ -1,0 +1,17 @@
+Sign in to MusicTracker
+
+<form method='post' action='/users/signin'>
+  <div class='actions'>
+    <label for='username'> Username:
+      <input name='username' id='username' value="<%= @username || params[:username] %>" />
+    </label>
+  </div>
+
+  <div>
+    <label for='password'> password:
+      <input name='password' id='password' type='password' value='' />
+    </label>
+  </div>
+
+  <button type='submit'>Sign In</button>
+</form>
