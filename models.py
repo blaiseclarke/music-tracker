@@ -17,7 +17,7 @@ class User(UserMixin, db.Model):
         self.password_hash = pbkdf2_sha256.hash(password)
 
     def check_password(self, password):
-        return pbkdf2_sha256.verify(password, self.password)
+        return pbkdf2_sha256.verify(password, self.password_hash)
 
 
 class Artist(db.Model):
@@ -26,7 +26,7 @@ class Artist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text, nullable=False, unique=True)
     albums = db.relationship(
-        "Album", back_populates="artists", cascade="all, delete-orphan"
+        "Album", back_populates="artist", cascade="all, delete-orphan"
     )
 
 
@@ -42,6 +42,9 @@ class Album(db.Model):
     # Linking album to artist and cover
     artist_id = db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
     artist = db.relationship("Artist", back_populates="albums")
+    cover = db.relationship(
+        "Cover", uselist=False, back_populates="album", cascade="all, delete-orphan"
+    )
 
 
 class Cover(db.Model):
