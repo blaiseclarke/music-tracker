@@ -1,4 +1,4 @@
-## Python Music Tracker
+## Music Tracker
 
 This is a web application for searching and tracking music albums, built with Python, Flask, and PostgreSQL.
 
