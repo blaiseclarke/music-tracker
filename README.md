@@ -1,4 +1,4 @@
-# Python Music Tracker
+## Python Music Tracker
 
 This is a web application for searching and tracking music albums, built with Python, Flask, and PostgreSQL.
 
@@ -6,7 +6,7 @@ This is a web application for searching and tracking music albums, built with Py
 
 ---
 
-## Features
+### Features
 
 * User registration and authentication (via Flask-Login and `passlib` for hashing).
 * Search for albums by artist and title using the **MusicBrainz API**.
@@ -16,7 +16,7 @@ This is a web application for searching and tracking music albums, built with Py
 
 ---
 
-## Technology Stack
+### Technology Stack
 
 * **Backend:** Python 3.11+
 * **Framework:** Flask
@@ -30,7 +30,7 @@ This is a web application for searching and tracking music albums, built with Py
 
 ---
 
-## Local Development Setup
+### Local Development Setup
 
 1.  Clone the repository:
     ```bash
