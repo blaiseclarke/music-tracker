@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title">Search for an album to add:</h4>
+
+        <form action="{{ url_for('music.search') }}" method="GET">
+          <div class="mb-3">
+            <label for="artist" class="form-label">Artist:</label>
+            <input type="text" id="artist" name="artist" class="form-control" placeholder="e.g., Boards of Canada" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="album" class="form-label">Album:</label>
+            <input type="text" id="album" name="album" class="form-control" placeholder="e.g., Music Has the Right to Children" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
