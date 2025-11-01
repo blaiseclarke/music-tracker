@@ -2,7 +2,7 @@
 
 This is a web application for searching and tracking music albums, built with Python, Flask, and PostgreSQL.
 
-This project is a port and modernization of an older application I built using Ruby and Sinatra. The goal was to demonstrate my ability to work with Python's web ecosystem, implement modern best practices like an ORM and Blueprints, and build a full-stack, portfolio-ready application.
+This project is a port and modernization of an older application I built using Ruby and Sinatra. The goal was to demonstrate my ability to work with Python, use best practices like an ORM and Blueprints, and build a full-stack application.
 
 ---
 
